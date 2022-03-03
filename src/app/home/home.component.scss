@@ -3,16 +3,17 @@
   padding: 0 1rem;
   background: #f1f5f9;
   &__box {
-    min-height: 120px;
-    background: #1e293b;
+    min-height: 140px;
+    background: #082158;
     margin: 0 -1rem;
-    font-size: 36px;
+    font-size: 50px;
   }
   &__content {
     min-height: calc(100vh - 178px);
     border-radius: 10px;
     margin-top: -2rem;
     background: white;
+    background :image("../assets/back.jpg");
     color: black;
     font-size: 2rem;
     &-data {

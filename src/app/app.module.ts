@@ -14,6 +14,11 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table' ;
+import { HttpClientModule } from '@angular/common/http';
+import { ClientServiceService } from './service/client-service.service';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,8 +39,14 @@ import { MatListModule } from '@angular/material/list';
     MatIconModule,
     MatDividerModule,
     MatListModule,
+    MatTableModule,
+    HttpClientModule,
+    MatPaginatorModule,
+    ReactiveFormsModule
+   
+   
   ],
-  providers: [],
+  providers: [ClientServiceService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

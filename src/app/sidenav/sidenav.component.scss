@@ -8,17 +8,18 @@
   text-align: center;
   padding: 2.6rem 1rem;
   img {
-    width: 200px;
+    width: 150px;
   }
 }
 .mat-divider {
   border-top-width: 2px;
   border-color: white;
 }
+
 .mat-list-item {
-  color: #94a3b8 !important;
+  color: #74b165 !important;
   font-size: 0.8rem;
-  height: 44px !important;
+  height: 40px !important;
   margin-bottom: 4px;
   &:hover {
     color: #f2f5f7 !important;
@@ -28,7 +29,7 @@
       border-radius: 5px;
       margin: 0 8px;
       &:hover {
-        background: #2c3344 !important;
+        background: #74b165 !important;
       }
     }
   }
@@ -43,16 +44,16 @@
   color: #f2f5f7 !important;
   ::ng-deep {
     .mat-list-item-content {
-      background: #2c3344 !important;
+      background: #74b165 !important;
       &:hover {
-        background: #2c3344 !important;
+        background: #74b165 !important;
       }
     }
   }
 }
 .mat-subheader {
-  color: #818cf8;
-  font-size: 0.6rem;
+  color: white;
+  font-size: 1rem;
   font-weight: 100;
   letter-spacing: 1px;
 }
