@@ -1,4 +1,6 @@
 export class Client {
+    
+    public id !:number;
     public reference!: String;
     public cin!: String; 
 	public nomPrenom!: String;
@@ -18,8 +20,8 @@ export class Client {
 	public organisme!: String;
     public groupe!: String;
     
-    //private MatriculeFiscal!: String;
-   // private observations!: String;
+    public MatriculeFiscal!: String;
+    public observations!: String;
    // private vendeur!: String;
 
 

@@ -1,0 +1,116 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Clients</div>
+  <div class="page__content shadow p-3 position-relative">
+    <div>
+      <!-- search field -->
+      <div class="input-group rounded">
+        <input type="text" placeholder="Chercher par nom et prénom" class="search" [(ngModel)]="nomPrenom" (input)="Search()" />
+      </div>
+      <!-- table -->
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- Réference Column -->
+        <ng-container matColumnDef="reference">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left:1%;">Réference</th>
+          <td mat-cell *matCellDef="let row" style="padding-left:1%;"> {{row.reference}} </td>
+        </ng-container>
+
+        <!-- NomPrénom Column -->
+        <ng-container matColumnDef="nomPrenom">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left:2%;">Nom et Prénom</th>
+          <td mat-cell *matCellDef="let row" style="padding-left:2%;"> {{row.nomPrenom}} </td>
+        </ng-container>
+
+        <!-- chiffreAffaire Column -->
+        <ng-container matColumnDef="chiffreAffaire">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left:2%;">Chiffre d'affaire</th>
+          <td mat-cell *matCellDef="let row" style="padding-left:2%;"> {{row.chiffreAffaire}} </td>
+        </ng-container>
+
+        <!-- solde Column -->
+        <ng-container matColumnDef="solde">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left:0%;"> Solde </th>
+          <td mat-cell *matCellDef="let row" style="padding-left:0%;"> {{row.solde}} </td>
+        </ng-container>
+
+        <!-- nbreVisite Column -->
+        <ng-container matColumnDef="nbreVisite">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left:2%;">Nombre de visite </th>
+          <td mat-cell *matCellDef="let row" style="padding-left:2%;"> {{row.nbreVisite | date}} </td>
+        </ng-container>
+
+        <!-- dateNaissance Column -->
+        <ng-container matColumnDef="dateNaissance">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left:2%;"> date de naissance </th>
+          <td mat-cell *matCellDef="let row" style="padding-left:2%;"> {{row.dateNaissance}} </td>
+        </ng-container>
+
+        <!-- observation Column -->
+        <ng-container matColumnDef="observations">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left:0%;"> Observation </th>
+          <td mat-cell *matCellDef="let row" style="padding-left:0%;"> {{row.observations}} </td>
+        </ng-container>
+
+        <!-- organisme Column -->
+        <ng-container matColumnDef="organisme">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left:1%;"> Organisme </th>
+          <td mat-cell *matCellDef="let row" style="padding-left:1%;"> {{row.organisme}} </td>
+        </ng-container>
+
+        <!-- groupe Column -->
+        <ng-container matColumnDef="groupe">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left:2%;"> Groupe </th>
+          <td mat-cell *matCellDef="let row" style="padding-left:2%;"> {{row.groupe}} </td>
+        </ng-container>
+
+        <!-- action Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left:4%;"> Actions </th>
+
+          <td mat-cell *matCellDef="let row" style="padding-left:4%;">
+            <!-- Edit button -->
+            <button title="Modifier" class="modif m-1" (click)="openDialog();onEdite(row)">
+              <mat-icon>edit </mat-icon>
+            </button>
+            <!-- Button delete -->
+            <button title="supprimer" class="supp m-1 " (click)="deleteClient(row.id)">
+              <mat-icon>delete </mat-icon>
+            </button>
+          </td>
+
+        </ng-container>
+
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter</td>
+        </tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[ 15, 25, 100]" aria-label="Select page of listClient"></mat-paginator>
+      <!-- Add Button -->
+      <div class="d-flex  m-2">
+        <button type="button" class="ajouter" mat-raised-button (click)="openDialog();addClient()">
+          <mat-icon>person_add </mat-icon> Ajouter client
+        </button>
+      </div>
+      <!-- Client file button -->
+      <div class="d-flex m-2">
+        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="dossier">
+          <mat-icon>attach_file </mat-icon> Dossier client
+        </button>
+      </div>
+      <!-- button print -->
+      <div class="d-flex m-2">
+        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="impri">
+          <mat-icon>adf_scanner </mat-icon> Imprimer
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>

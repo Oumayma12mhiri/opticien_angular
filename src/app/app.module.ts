@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { ClientComponent } from './dashboard/client.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -18,15 +18,27 @@ import { MatTableModule } from '@angular/material/table' ;
 import { HttpClientModule } from '@angular/common/http';
 import { ClientServiceService } from './service/client-service.service';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddAndEditClientComponent } from './dashboard/add-and-edit-client/add-and-edit-client.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRippleModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    DashboardComponent,
+    ClientComponent,
     SidenavComponent,
+    AddAndEditClientComponent,
+    AuthenticationComponent,
+
+    
   ],
   imports: [
     BrowserModule,
@@ -42,10 +54,23 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatTableModule,
     HttpClientModule,
     MatPaginatorModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
    
+    MatMenuModule,
+    
    
+    MatButtonModule,
+   
+    
+    MatRippleModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    FormsModule
+    
   ],
+ 
   providers: [ClientServiceService],
   bootstrap: [AppComponent],
 })

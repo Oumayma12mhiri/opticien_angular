@@ -1,0 +1,223 @@
+<h1 mat-dialog-title>Client</h1>
+<div mat-dialog-content>
+
+  <form [formGroup]="formValue">
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td style="padding-left:4%;">
+          <mat-form-field appearance="fill">
+            <mat-label>Nom et prénom :</mat-label>
+            <input matInput placeholder="..." type="text" formControlName="nomPrenom" class="form-control" required
+              id="nomPrenom">
+            <mat-icon matSuffix>face</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </td>
+
+        <td style="padding-left:6%;">
+          <mat-form-field appearance="fill">
+            <mat-label>Matricule fiscale :</mat-label>
+            <input matInput placeholder="..." type="text" formControlName="MatriculeFiscal" class="form-control"
+              required id="MatriculeFiscal">
+            <mat-icon matSuffix>description</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </td>
+
+        <td style="padding-left:8%;">
+          <mat-form-field appearance="fill">
+            <mat-label>N°Tél 1 :</mat-label>
+            <input matInput placeholder="..." type="text" formControlName="numTel1" class="form-control" required
+              id="numTel1">
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </td>
+
+        <td style="padding-left:10%;">
+          <mat-form-field appearance="fill">
+            <mat-label>N°Tél 2 :</mat-label>
+            <input matInput placeholder="..." type="text" formControlName="numTel2" class="form-control" required
+              id="numTel2">
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </td>
+
+
+
+        <td style="padding-left:12%;">
+          <mat-form-field appearance="fill">
+            <mat-label>Email :</mat-label>
+            <input matInput placeholder="pat@example.com" type="text" formControlName="email" class="form-control"
+              required id="email">
+            <mat-icon matSuffix>email</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </td>
+
+      </tr>
+    </table>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td style="padding-left:10%;">
+
+          <mat-form-field appearance="fill">
+            <mat-label>Date de naissance :</mat-label>
+            <input matInput placeholder="JJ/MM/AAAA" type="date" formControlName="dateNaissance" class="form-control"
+              required id="dateNaissance">
+            <mat-icon matSuffix>cake</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </td>
+
+        <td style="padding-left:14%;">
+          <mat-form-field appearance="fill">
+            <mat-label>Age :</mat-label>
+            <input matInput placeholder="..." type="text" formControlName="age" class="form-control" required id="age">
+            <mat-icon matSuffix>celebration</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </td>
+
+      </tr>
+    </table>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td style="padding-left:10%;">
+
+          <mat-form-field appearance="fill">
+            <mat-label>CIN :</mat-label>
+            <input matInput placeholder="..." type="text" formControlName="cin" class="form-control" required id="cin">
+            <mat-icon matSuffix>perm_identity</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </td>
+        <td style="padding-left:14%;">
+          <mat-form-field appearance="fill">
+            <mat-label>N°Assuré social :</mat-label>
+            <input matInput placeholder="..." type="text" formControlName="numAssureSocial" class="form-control"
+              required id="numAssureSocial">
+            <mat-icon matSuffix>description</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td style="padding-left:7%;">
+
+          <mat-form-field appearance="fill">
+            <mat-label>Adresse :</mat-label>
+            <input matInput placeholder="..." type="text" formControlName="adresse" class="form-control" required
+              id="adresse">
+            <mat-icon matSuffix>home</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </td>
+
+        <td style="padding-left:10%;">
+          <mat-form-field appearance="fill">
+            <mat-label>Ville :</mat-label>
+            <input matInput placeholder="..." type="text" formControlName="ville" class="form-control" required
+              id="ville">
+            <mat-icon matSuffix>flag</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </td>
+
+        <td style="padding-left:13%;">
+          <mat-form-field appearance="fill">
+            <mat-label>Pays :</mat-label>
+            <select matNativeControl required formControlName="pays" class="form-control" id="pays">
+              <option value="volvo">Tunisie</option>
+              <option value="saab">France</option>
+              <option value="saab">Canada</option>
+              <option value="saab">Amérique</option>
+            </select>
+          </mat-form-field>
+        </td>
+
+      </tr>
+    </table>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td style="padding-left:7%;">
+
+          <mat-form-field appearance="fill">
+            <mat-label>Groupe :</mat-label>
+            <select matNativeControl required formControlName="groupe" class="form-control" id="groupe">
+              <option value="Famille Mhiri">Famille Mhiri</option>
+            </select>
+            <mat-icon matSuffix>groups</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </td>
+
+        <td style="padding-left:8%;">
+          <button title="Ajouter" class="ajout">
+            <mat-icon>add </mat-icon>
+          </button>
+          <button title="supprimer" class="supp">
+            <mat-icon>delete </mat-icon>
+          </button>
+        </td>
+
+        <td style="padding-left:3%;">
+          <mat-form-field appearance="fill">
+            <mat-label>Organisme :</mat-label>
+            <select matNativeControl required formControlName="organisme" class="form-control" id="organisme">
+              <option value="Societe DK Soft">Societe DK Soft</option>
+            </select>
+            <mat-icon matSuffix>engineering</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </td>
+
+        <td style="padding-left:4%;">
+          <button title="Ajouter" class="ajout">
+            <mat-icon style="align-items: center;">add </mat-icon>
+          </button>
+          <button title="supprimer" class="supp">
+            <mat-icon>delete </mat-icon>
+          </button>
+        </td>
+      </tr>
+    </table>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td style="padding-left:20%;">
+
+          <mat-form-field appearance="fill">
+            <mat-label>Observation :</mat-label>
+            <input matInput placeholder="..." type="text" formControlName="observations" class="form-control" required
+              id="observations">
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+
+
+  </form>
+</div>
+
+
+<div mat-dialog-actions>
+  <button mat-raised-button color="warn" class="fermer" id="cancel" (click)="onNoClick()">Fermer</button>
+
+  <button mat-raised-button color="primary" *ngIf="showAdd" class="ajouter"  cdkFocusInitial
+    (click)="postClientDetails()">Ajouter</button>
+  <button mat-raised-button color="primary" class="modif" *ngIf="showUpdate" cdkFocusInitial
+    (click)="UpdateClientDetails()">Modifier</button>
+
+</div>

@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
+import { ClientComponent } from './dashboard/client.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'authentification', pathMatch: 'full' },
+  { path: 'authentification', component: AuthenticationComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: ClientComponent },
 ];
 
 @NgModule({
