@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'admin-panel-layout';
-  sideBarOpen = true;
+  sideBarOpen !: boolean;
+  constructor(public auth: AuthenticationComponent) { }
 
   sideBarToggler() {
-    this.sideBarOpen = !this.sideBarOpen;
+    if (this.auth.getEtat() == 'false') {
+      this.sideBarOpen = false;
+    } else if (this.auth.getEtat() == 'true')
+      this.sideBarOpen = true;
   }
 }

@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Client</h1>
+<h1 mat-dialog-title style="color: rgb(6, 59, 173);"><mat-icon>person_add </mat-icon>  CLIENT</h1>
 <div mat-dialog-content>
 
   <form [formGroup]="formValue">
@@ -6,7 +6,7 @@
     <table class="example-full-width" cellspacing="0">
       <tr>
         <td style="padding-left:4%;">
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 170px;font-size: 80%;">
             <mat-label>Nom et prénom :</mat-label>
             <input matInput placeholder="..." type="text" formControlName="nomPrenom" class="form-control" required
               id="nomPrenom">
@@ -16,17 +16,17 @@
         </td>
 
         <td style="padding-left:6%;">
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 170px;font-size: 80%;">
             <mat-label>Matricule fiscale :</mat-label>
-            <input matInput placeholder="..." type="text" formControlName="MatriculeFiscal" class="form-control"
-              required id="MatriculeFiscal">
+            <input matInput placeholder="..." type="text" formControlName="matriculeFiscal" class="form-control"
+              required id="matriculeFiscal">
             <mat-icon matSuffix>description</mat-icon>
             <mat-hint>Hint</mat-hint>
           </mat-form-field>
         </td>
 
         <td style="padding-left:8%;">
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 170px;font-size: 80%;">
             <mat-label>N°Tél 1 :</mat-label>
             <input matInput placeholder="..." type="text" formControlName="numTel1" class="form-control" required
               id="numTel1">
@@ -36,7 +36,7 @@
         </td>
 
         <td style="padding-left:10%;">
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 170px;font-size: 80%;">
             <mat-label>N°Tél 2 :</mat-label>
             <input matInput placeholder="..." type="text" formControlName="numTel2" class="form-control" required
               id="numTel2">
@@ -48,7 +48,7 @@
 
 
         <td style="padding-left:12%;">
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 170px;font-size: 80%;">
             <mat-label>Email :</mat-label>
             <input matInput placeholder="pat@example.com" type="text" formControlName="email" class="form-control"
               required id="email">
@@ -62,9 +62,9 @@
 
     <table class="example-full-width" cellspacing="0">
       <tr>
-        <td style="padding-left:10%;">
+        <td style="padding-left:10%;" >
 
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 170px;font-size: 80%;">
             <mat-label>Date de naissance :</mat-label>
             <input matInput placeholder="JJ/MM/AAAA" type="date" formControlName="dateNaissance" class="form-control"
               required id="dateNaissance">
@@ -74,7 +74,7 @@
         </td>
 
         <td style="padding-left:14%;">
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 170px;font-size: 80%;">
             <mat-label>Age :</mat-label>
             <input matInput placeholder="..." type="text" formControlName="age" class="form-control" required id="age">
             <mat-icon matSuffix>celebration</mat-icon>
@@ -89,7 +89,7 @@
       <tr>
         <td style="padding-left:10%;">
 
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 170px;font-size: 80%;">
             <mat-label>CIN :</mat-label>
             <input matInput placeholder="..." type="text" formControlName="cin" class="form-control" required id="cin">
             <mat-icon matSuffix>perm_identity</mat-icon>
@@ -97,7 +97,7 @@
           </mat-form-field>
         </td>
         <td style="padding-left:14%;">
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 170px;font-size: 80%;">
             <mat-label>N°Assuré social :</mat-label>
             <input matInput placeholder="..." type="text" formControlName="numAssureSocial" class="form-control"
               required id="numAssureSocial">
@@ -112,7 +112,7 @@
       <tr>
         <td style="padding-left:7%;">
 
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 170px;font-size: 80%;">
             <mat-label>Adresse :</mat-label>
             <input matInput placeholder="..." type="text" formControlName="adresse" class="form-control" required
               id="adresse">
@@ -122,7 +122,7 @@
         </td>
 
         <td style="padding-left:10%;">
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 170px;font-size: 80%;">
             <mat-label>Ville :</mat-label>
             <input matInput placeholder="..." type="text" formControlName="ville" class="form-control" required
               id="ville">
@@ -132,7 +132,7 @@
         </td>
 
         <td style="padding-left:13%;">
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 170px;font-size: 80%;">
             <mat-label>Pays :</mat-label>
             <select matNativeControl required formControlName="pays" class="form-control" id="pays">
               <option value="volvo">Tunisie</option>
@@ -150,7 +150,7 @@
       <tr>
         <td style="padding-left:7%;">
 
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 170px;font-size: 80%;">
             <mat-label>Groupe :</mat-label>
             <select matNativeControl required formControlName="groupe" class="form-control" id="groupe">
               <option value="Famille Mhiri">Famille Mhiri</option>
@@ -161,7 +161,7 @@
         </td>
 
         <td style="padding-left:8%;">
-          <button title="Ajouter" class="ajout">
+          <button title="Ajouter" class="ajout" (click)="openDialogGrp()">
             <mat-icon>add </mat-icon>
           </button>
           <button title="supprimer" class="supp">
@@ -170,10 +170,10 @@
         </td>
 
         <td style="padding-left:3%;">
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 170px;font-size: 80%;">
             <mat-label>Organisme :</mat-label>
             <select matNativeControl required formControlName="organisme" class="form-control" id="organisme">
-              <option value="Societe DK Soft">Societe DK Soft</option>
+              <option>{{serviceOrg.getNomOrganisme()}}</option>
             </select>
             <mat-icon matSuffix>engineering</mat-icon>
             <mat-hint>Hint</mat-hint>
@@ -181,7 +181,7 @@
         </td>
 
         <td style="padding-left:4%;">
-          <button title="Ajouter" class="ajout">
+          <button title="Ajouter" class="ajout" (click)="openDialogOrg()" >
             <mat-icon style="align-items: center;">add </mat-icon>
           </button>
           <button title="supprimer" class="supp">
@@ -195,7 +195,7 @@
       <tr>
         <td style="padding-left:20%;">
 
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" style="width: 170px;font-size: 80%;">
             <mat-label>Observation :</mat-label>
             <input matInput placeholder="..." type="text" formControlName="observations" class="form-control" required
               id="observations">
@@ -213,10 +213,10 @@
 
 
 <div mat-dialog-actions>
-  <button mat-raised-button color="warn" class="fermer" id="cancel" (click)="onNoClick()">Fermer</button>
+  <button mat-raised-button color="warn" class="fermer" id="cancel" (click)="onNoClick()">Fermer <mat-icon>clear </mat-icon></button>
 
   <button mat-raised-button color="primary" *ngIf="showAdd" class="ajouter"  cdkFocusInitial
-    (click)="postClientDetails()">Ajouter</button>
+    (click)="postClientDetails()">Ajouter <mat-icon>person_add </mat-icon></button>
   <button mat-raised-button color="primary" class="modif" *ngIf="showUpdate" cdkFocusInitial
     (click)="UpdateClientDetails()">Modifier</button>
 

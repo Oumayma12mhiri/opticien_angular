@@ -20,7 +20,7 @@ export class Client {
 	public organisme!: String;
     public groupe!: String;
     
-    public MatriculeFiscal!: String;
+    public matriculeFiscal!: String;
     public observations!: String;
    // private vendeur!: String;
 

@@ -20,13 +20,25 @@ import { ClientServiceService } from './service/client-service.service';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddAndEditClientComponent } from './dashboard/add-and-edit-client/add-and-edit-client.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialog, MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { ClientFileComponent } from './dashboard/client-file/client-file.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { RegisterComponent } from './authentication/register/register.component';
+import { VisiteServiceService } from './service/visite-service.service';
+import { OrganismeComponent } from './dashboard/organisme/organisme.component';
+import { OrganismeServiceService } from './service/organisme-service.service';
+import { GroupeFamComponent } from './dashboard/groupe-fam/groupe-fam.component';
+import { GroupeFamServiceService } from './service/groupe-fam-service.service';
+import { NewVisitComponent } from './dashboard/client-file/new-visit/new-visit.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -37,6 +49,12 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     SidenavComponent,
     AddAndEditClientComponent,
     AuthenticationComponent,
+    ClientFileComponent,
+    RegisterComponent,
+    OrganismeComponent,
+    GroupeFamComponent,
+    NewVisitComponent,
+    
 
     
   ],
@@ -67,11 +85,15 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    MatTabsModule,
+    
+    
     
   ],
  
-  providers: [ClientServiceService],
+  providers: [ClientServiceService,AuthenticationComponent,VisiteServiceService,ClientFileComponent,OrganismeServiceService,OrganismeComponent,{provide:MatDialogRef,useValue:[]},GroupeFamComponent,GroupeFamServiceService,NewVisitComponent],
+  
   bootstrap: [AppComponent],
 })
 export class AppModule {}

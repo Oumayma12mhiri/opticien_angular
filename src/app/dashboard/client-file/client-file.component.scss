@@ -1,0 +1,145 @@
+.detail{
+  background-color: white;
+  border-radius: 10px;
+  border:none;
+  width: 40px ;
+  height: 40px;
+  color: rgba(0, 110, 255, 0.432);
+  
+   
+  }
+  
+  .regl{
+    background-color:  white;
+  border-radius: 10px;
+  border:none;
+  width: 40px ;
+  height: 40px;
+  color: rgb(25, 49, 82);
+   
+  } 
+  .visite{
+    background-color: gray;
+    border-radius: 10px;
+    border:none;
+    width: 180px ;
+    height: 35px;
+    color: white;
+    font-size: medium;
+    text-align: center;
+  }
+  .fiche{
+    background-color: rgb(63, 58, 58);
+    border-radius: 10px;
+    border:none;
+    width: 180px ;
+    height: 35px;
+    color: white;
+    font-size: medium;
+    text-align: center;
+  }
+  .table1 {
+    width: 60%;
+    height: 60%;
+ 
+  }
+  .mod{
+    background-color: rgba(11, 100, 3, 0.842);
+    border-radius: 10px;
+    border:none;
+    width: 180px ;
+    height: 35px;
+    color: white;
+    font-size: medium;
+    text-align: center;
+
+  }
+
+  .modif{
+    background-color: rgba(11, 100, 3, 0.842);
+    border-radius: 10px;
+    border:none;
+    width: 130px ;
+    height: 35px;
+    color: white;
+    font-size: medium;
+    text-align: center;
+
+  }
+  .annuler{
+    background-color: #bd3f3f;
+    border-radius: 10px;
+    border:none;
+    width: 180px ;
+    height: 35px;
+    color: white;
+    font-size: medium;
+    text-align: center;
+  }
+  .Livraison{
+    background-color: rgba(18, 97, 67, 0.842);
+    border-radius: 10px;
+    border:none;
+    width: 210px ;
+    height: 35px;
+    color: white;
+    font-size: medium;
+    text-align: center;
+  }
+
+ .grp{
+    width: 100%;
+}
+
+th{
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  color: rgb(6, 59, 173);
+
+}
+
+td{
+
+  text-align: left;
+  font-size: 12px;
+  padding: top 5px;;
+
+}
+
+ 
+  .example-small-box, .example-large-box {
+    display: flex;
+    align-items: initial;
+    justify-content: left;
+    margin: 16px;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .example-small-box {
+    height: 300px;
+    width: 1000px;
+  }
+  
+  .example-large-box {
+    height: 300px;
+    width: 900px;
+  }
+  
+  
+  
+  .mat-form-field {
+    font-size: 10px;
+    width: 100%;
+  }
+  th{
+    text-align: center;
+    font-size: small;
+    color: rgb(6, 59, 173);
+
+  }
+  mat-card  {
+    width: 98%;
+  }
+  

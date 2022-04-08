@@ -1,0 +1,88 @@
+<h1 mat-dialog-title style="color: gray;">
+    <mat-icon>published_with_changes </mat-icon> NOUVELLE VISITE
+</h1>
+<div mat-dialog-content>
+
+    <form [formGroup]="formValue">
+
+        <table class="example-full-width" cellspacing="0" align="center">
+            <tr>
+                <td style="padding-left:0%;">
+                    <mat-form-field appearance="fill" style="width: 200px;font-size: 80%;">
+                        <mat-label>Reference visite  :</mat-label>
+                        <input matInput placeholder="..." type="text" formControlName="refVisite"
+                            class="form-control" required id="refVisite">
+                        <mat-icon matSuffix>tour</mat-icon>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <table class="example-full-width" cellspacing="0" align="center">
+            <tr>
+
+                <td style="padding-left:0%;">
+                    <mat-form-field appearance="fill" style="width: 200px;font-size: 80%;">
+                        <mat-label>Date visite :</mat-label>
+                        <input matInput placeholder="..." type="date" formControlName="date"
+                            class="form-control" required id="date">
+                        <mat-icon matSuffix>event</mat-icon>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+
+        <table class="example-full-width" cellspacing="0" cellspacing="0" align="center">
+            <tr>
+
+                <td style="padding-left:0%;">
+                    <mat-form-field appearance="fill" style="width: 200px;font-size: 80%;">
+                        <mat-label>Heure visite :</mat-label>
+                        <input matInput placeholder="..." type="datetime" formControlName="heure" class="form-control"
+                            required id="heure">
+                        <mat-icon matSuffix>hourglass_bottom</mat-icon>
+
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <table class="example-full-width" cellspacing="0" align="center">
+            <tr>
+
+                <td style="padding-left:0%;">
+                    <mat-form-field appearance="fill" style="width: 200px;font-size: 80%;">
+                        <mat-label>Montant reçu :</mat-label>
+                        <input matInput placeholder="..." type="number" formControlName="" class="form-control"
+                            required id="">
+                        <mat-icon matSuffix>paid</mat-icon>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+
+        <table class="example-full-width" cellspacing="0" cellspacing="0" align="center">
+            <tr>
+
+
+
+                <td style="padding-left:0%;">
+                    <mat-form-field appearance="fill" style="width: 200px;font-size: 80%;">
+                        <mat-label>Reste a payer :</mat-label>
+                        <input matInput placeholder="..." type="text" formControlName=""
+                            class="form-control" required id="">
+                        <mat-icon matSuffix>attach_money</mat-icon>
+                    </mat-form-field>
+                </td>
+
+                
+
+            </tr>
+        </table>
+
+    </form>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-raised-button color="warn" class="fermer" id="cancel" (click)="onNoClick()"  >Fermer <mat-icon>clear </mat-icon></button>
+  
+    <button mat-raised-button color="primary"  class="ajouter"  (click)="postVisitDetails()"  cdkFocusInitial
+      >Ajouter visite <mat-icon>add_business </mat-icon></button>

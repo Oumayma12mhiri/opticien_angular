@@ -1,0 +1,87 @@
+<h1 mat-dialog-title style="color: rgba(11, 100, 3, 0.842);">
+    <mat-icon>add_business </mat-icon> AJOUTER ORGANISME
+</h1>
+<div mat-dialog-content>
+
+    <form [formGroup]="formValue">
+
+        <table class="example-full-width" cellspacing="0" align="center">
+            <tr>
+                <td style="padding-left:0%;">
+                    <mat-form-field appearance="fill" style="width: 200px;font-size: 80%;">
+                        <mat-label>Nom de l'organisme :</mat-label>
+                        <input matInput placeholder="..." type="text" formControlName="nomOrganisme"
+                            class="form-control" required id="nomOrganisme">
+                        <mat-icon matSuffix>apartment</mat-icon>
+                    </mat-form-field>
+                </td>
+
+                <td style="padding-left:4%;">
+                    <mat-form-field appearance="fill" style="width: 200px;font-size: 80%;">
+                        <mat-label>Email :</mat-label>
+                        <input matInput placeholder="pat@example.com" type="text" formControlName="email"
+                            class="form-control" required id="email">
+                        <mat-icon matSuffix>email</mat-icon>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+
+        <table class="example-full-width" cellspacing="0" cellspacing="0" align="center">
+            <tr>
+
+                <td style="padding-left:0%;">
+                    <mat-form-field appearance="fill" style="width: 200px;font-size: 80%;">
+                        <mat-label>Adresse :</mat-label>
+                        <input matInput placeholder="..." type="text" formControlName="adresse" class="form-control"
+                            required id="adresse">
+                        <mat-icon matSuffix>maps_home_work</mat-icon>
+
+                    </mat-form-field>
+                </td>
+
+                <td style="padding-left:4%;">
+                    <mat-form-field appearance="fill" style="width: 200px;font-size: 80%;">
+                        <mat-label>N°Tél :</mat-label>
+                        <input matInput placeholder="..." type="text" formControlName="numTel" class="form-control"
+                            required id="numTel">
+                        <mat-icon matSuffix>phone</mat-icon>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+
+        <table class="example-full-width" cellspacing="0" cellspacing="0" align="center">
+            <tr>
+
+
+
+                <td style="padding-left:0%;">
+                    <mat-form-field appearance="fill" style="width: 200px;font-size: 80%;">
+                        <mat-label>Matricule fiscale :</mat-label>
+                        <input matInput placeholder="..." type="text" formControlName="matriculeFiscal"
+                            class="form-control" required id="matriculeFiscal">
+                        <mat-icon matSuffix>description</mat-icon>
+                    </mat-form-field>
+                </td>
+
+                <td style="padding-left:4%;">
+                    <mat-form-field appearance="fill" style="width: 200px;font-size: 80%;">
+                        <mat-label>Le remise de l'organisme :</mat-label>
+                        <input matInput placeholder="..." type="text" formControlName="remise_org" class="form-control"
+                            required id="remise_org">
+                        <mat-icon matSuffix>discount</mat-icon>
+                    </mat-form-field>
+                </td>
+
+            </tr>
+        </table>
+
+    </form>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-raised-button color="warn" class="fermer" id="cancel" (click)="onNoClick()" >Fermer <mat-icon>clear </mat-icon></button>
+  
+    <button mat-raised-button color="primary"  class="ajouter" (click)="postOrgDetails()"  cdkFocusInitial
+      >Ajouter <mat-icon>add_business </mat-icon></button>

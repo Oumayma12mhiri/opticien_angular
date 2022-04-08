@@ -3,6 +3,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Client } from 'src/app/model/client';
 import { ClientServiceService } from 'src/app/service/client-service.service';
+import { OrganismeServiceService } from 'src/app/service/organisme-service.service';
+import { GroupeFamComponent } from '../groupe-fam/groupe-fam.component';
+import { OrganismeComponent } from '../organisme/organisme.component';
 
 
 
@@ -33,20 +36,36 @@ export class AddAndEditClientComponent implements OnInit {
     groupe: new FormControl(''),
     organisme: new FormControl(''),
     observations: new FormControl(''),
-    MatriculeFiscal: new FormControl(''),
+    matriculeFiscal: new FormControl(''),
     //vendeur: new FormControl(''),
   })
 
   constructor(
     private serviceClient: ClientServiceService,
+    public serviceOrg:OrganismeServiceService,
     public dialogRef: MatDialogRef<AddAndEditClientComponent>,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public organisme:OrganismeComponent,
+    public groupe:GroupeFamComponent
   ) { }
 
 ngOnInit(): void { }
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  openDialogOrg(): void {
+    this.organisme.openDialogOrg();
+  }
+
+  openDialogGrp(): void {
+    this.groupe.openDialogGrp();
+
+  }
+
+  deleteOrganisme(id: any){
+    this.organisme.deleteOrganisme(id);
   }
 
 //Save client
@@ -69,7 +88,7 @@ ngOnInit(): void { }
       organisme: this.formValue.value.organisme,
       groupe: this.formValue.value.groupe,
       observations: this.formValue.value.observations,
-      MatriculeFiscal: this.formValue.value.MatriculeFiscal
+      matriculeFiscal: this.formValue.value.matriculeFiscal
 
     }
 
@@ -115,7 +134,7 @@ ngOnInit(): void { }
       solde: row.solde,
       organisme: row.organisme,
       groupe: row.groupe,
-      MatriculeFiscal:row.MatriculeFiscal,
+      matriculeFiscal:row.matriculeFiscal,
       observations:row.observations
       })
   }
@@ -137,7 +156,7 @@ ngOnInit(): void { }
     this.client.solde = this.formValue.value.solde;
     this.client.organisme = this.formValue.value.organisme;
     this.client.groupe = this.formValue.value.groupe;
-    this.client.MatriculeFiscal = this.formValue.value.MatriculeFiscal;
+    this.client.matriculeFiscal = this.formValue.value.matriculeFiscal;
     this.client.observations = this.formValue.value.observations;
 
 
