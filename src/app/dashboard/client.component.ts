@@ -118,8 +118,9 @@ export class ClientComponent implements OnInit {
     this.clientFile.dialogRef.componentInstance.onEditFile(row);
   }
 
-  getVisiteByclient(id : number){
-    this.clientFile.getVisiteByclient(id);
+  getVisiteByclient(id: any){
+    this.clientFile.getVisiteByClient(id);
+    
   }
 
 

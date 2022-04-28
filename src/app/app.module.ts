@@ -36,6 +36,8 @@ import { OrganismeServiceService } from './service/organisme-service.service';
 import { GroupeFamComponent } from './dashboard/groupe-fam/groupe-fam.component';
 import { GroupeFamServiceService } from './service/groupe-fam-service.service';
 import { NewVisitComponent } from './dashboard/client-file/new-visit/new-visit.component';
+import { VenteComponent } from './vente/vente.component';
+
 
 
 
@@ -54,6 +56,7 @@ import { NewVisitComponent } from './dashboard/client-file/new-visit/new-visit.c
     OrganismeComponent,
     GroupeFamComponent,
     NewVisitComponent,
+    VenteComponent,
     
 
     
@@ -90,9 +93,10 @@ import { NewVisitComponent } from './dashboard/client-file/new-visit/new-visit.c
     
     
     
+    
   ],
  
-  providers: [ClientServiceService,AuthenticationComponent,VisiteServiceService,ClientFileComponent,OrganismeServiceService,OrganismeComponent,{provide:MatDialogRef,useValue:[]},GroupeFamComponent,GroupeFamServiceService,NewVisitComponent],
+  providers: [ClientServiceService,AuthenticationComponent,VisiteServiceService,ClientFileComponent,OrganismeServiceService,OrganismeComponent,{provide:MatDialogRef,useValue:[]},GroupeFamComponent,GroupeFamServiceService,NewVisitComponent,ClientComponent,AddAndEditClientComponent],
   
   bootstrap: [AppComponent],
 })

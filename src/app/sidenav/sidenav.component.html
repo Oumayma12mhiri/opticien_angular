@@ -1,4 +1,4 @@
-<mat-nav-list>
+<mat-nav-list *ngIf="getEtat()===true">
 
   <div class="logo py-4">
     <img src="./assets/opticien logo1.png" alt="Company Logo" />
@@ -14,7 +14,7 @@
   <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
     <mat-icon>people_alt</mat-icon> Clients
   </a>
-  <a mat-list-item> <mat-icon>store</mat-icon> Vente </a>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/vente"> <mat-icon>store</mat-icon> Vente </a>
   <a mat-list-item> <mat-icon>attach_money</mat-icon> Caisse </a>
   <a mat-list-item> <mat-icon>groups</mat-icon> Fournisseur </a>
   <a mat-list-item> <mat-icon>receipt</mat-icon> Facturation </a>

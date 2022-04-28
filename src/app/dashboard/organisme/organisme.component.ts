@@ -12,6 +12,8 @@ import { OrganismeServiceService } from 'src/app/service/organisme-service.servi
 export class OrganismeComponent implements OnInit {
   organisme: Organisme = new Organisme();
 
+  public listOrg: Organisme[];
+  
   formValue = new FormGroup({
     nomOrganisme: new FormControl(''),
     email: new FormControl(''),
@@ -34,6 +36,13 @@ export class OrganismeComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+
+  remplirListOrg(){
+   return this.serviceOrg.getOrganisme();
+
+
+ }
 
   openDialogOrg(): void {
     this.dialogRef = this.dialog.open(OrganismeComponent, {
@@ -67,7 +76,7 @@ export class OrganismeComponent implements OnInit {
       .subscribe(res => {
         console.log(res);
         alert("organisme ajouté avec succès")
-        let ref = document.getElementById('cancel')
+        let ref = document.getElementById('cancel1')
         ref?.click();
         this.formValue.reset();
       },

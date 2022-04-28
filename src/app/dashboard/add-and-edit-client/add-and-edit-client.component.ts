@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Client } from 'src/app/model/client';
+import { Organisme } from 'src/app/model/organisme';
 import { ClientServiceService } from 'src/app/service/client-service.service';
 import { OrganismeServiceService } from 'src/app/service/organisme-service.service';
 import { GroupeFamComponent } from '../groupe-fam/groupe-fam.component';
@@ -39,6 +40,7 @@ export class AddAndEditClientComponent implements OnInit {
     matriculeFiscal: new FormControl(''),
     //vendeur: new FormControl(''),
   })
+  //list = ['France', 'Belgique', 'Japon', 'Maroc'];
 
   constructor(
     private serviceClient: ClientServiceService,
@@ -48,8 +50,20 @@ export class AddAndEditClientComponent implements OnInit {
     public organisme:OrganismeComponent,
     public groupe:GroupeFamComponent
   ) { }
+  public listOrg: Organisme[];
+ngOnInit(): void { 
+  this.remplirListOrg();
+}
 
-ngOnInit(): void { }
+remplirListOrg(){
+this.organisme.remplirListOrg().subscribe(data => {
+  this.listOrg = data;
+}
+
+  )
+
+}
+
 
   onNoClick(): void {
     this.dialogRef.close();

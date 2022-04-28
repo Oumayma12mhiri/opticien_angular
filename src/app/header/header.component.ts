@@ -10,12 +10,24 @@ import { AuthenticationServiceService } from '../service/authentication-service.
 })
 export class HeaderComponent implements OnInit {
   @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
-
+loaded=false;
   constructor(private router: Router, public authService: AuthenticationServiceService,public auth:AuthenticationComponent) { }
   username = "";
   ngOnInit(): void {
     
 
+  }
+  getEtat()
+  {
+    let x =localStorage.getItem("logged");
+    if(x!= null)
+    {
+      return true;
+    }else
+    {
+      return false;
+    }
+    
   }
 
   logout() {
@@ -26,7 +38,8 @@ export class HeaderComponent implements OnInit {
 
   toggleSidebar() {
     
-    this.toggleSidebarForMe.emit();
+   this.toggleSidebarForMe.emit();
+  
   }
 
 

@@ -35,7 +35,8 @@ export class AuthenticationComponent implements OnInit {
         this.authService.setToken(res['accessToken']);
 
         this.authService.setUserName(res['username']);
-        this.router.navigateByUrl('dashboard');
+        this.router.navigateByUrl('home');
+        localStorage.setItem("logged",'true');
       },
       err => {
         this.error = true;

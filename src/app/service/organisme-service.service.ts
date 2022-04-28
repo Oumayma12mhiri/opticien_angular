@@ -27,7 +27,7 @@ export class OrganismeServiceService {
   }
 
   public getOrganisme(): Observable<Organisme[]> {
-    return this.http.get<Organisme[]>(environment.API_URL + "organismes/getAll", { headers: this.getHeaders() });
+    return this.http.get<Organisme[]>("http://localhost:9090/organismes/getAll", { headers: this.getHeaders() });
   }
 
   public postOrganisme(organisme: any) {
@@ -42,8 +42,6 @@ export class OrganismeServiceService {
     return this.http.delete<any>(environment.API_URL + "organismes/removeOrg/" + id, { headers: this.getHeaders() })
   }
 
-  getNomOrganisme() {
-    return this.organisme.nomOrganisme ;
-  }
+  
 
 }

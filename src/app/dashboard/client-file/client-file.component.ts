@@ -36,7 +36,7 @@ export class ClientFileComponent implements OnInit {
   listVisite: any;
   displayedColumns: string[] = ['numVisite', 'date', 'heure', 'solde', 'resteAPayer', 'vendeur', 'remise', 'actions'];
 
-  
+
   client: Client = new Client();
 
   @ViewChild(MatPaginator)
@@ -54,13 +54,42 @@ export class ClientFileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.getVisiteClient();
+    this.getAllVisites();
   }
 
-  getVisiteByclient(id :number){
+  //afficher les visites non archives
+  getVisiteNonArchive() {
+    this.serviceVisite.getVisitNonArchive().subscribe(
+      data => {
+        
+        this.listVisite = data;
+        this.dataSource = new MatTableDataSource(this.listVisite)
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+        alert("Visite archivée");
+      }
+    )
+
+  }
+
+  editVisiteNonArchive(id) {
+    console.log(id);
+    let v = new Visite();
+    v.isDeleted = true;
+    this.serviceVisite.UpdateVisiteArchive(v, id).subscribe(val=>console.log(val));
+    //this.serviceVisite.UpdateVisiteArchive(v, id).subscribe(res => {
+      //alert("Visite archivée");
+    //})
+
+
+  }
+
+  //afficher les visites pour chaque client
+  getVisiteByClient(id) {
+    console.log();
     this.serviceVisite.getVisitesByClient(id).subscribe(
       data => {
-
+        localStorage.setItem('idClient',id);
         this.listVisite = data;
         this.dataSource = new MatTableDataSource(this.listVisite)
         this.dataSource.paginator = this.paginator;
@@ -70,10 +99,16 @@ export class ClientFileComponent implements OnInit {
 
   }
 
+  
+
+
+
+  //button fermer de modal dossier client
   onNoClick(): void {
     this.dialogRef.close();
   }
 
+  //button nouvelle visite (open modal)
   openDialogNewVisit(): void {
     this.newVisit.openDialogNewVisit();
   }
@@ -111,9 +146,8 @@ export class ClientFileComponent implements OnInit {
     }
   }
 
-  
-
-  getVisiteClient() {
+  //afficher tous les visites 
+  getAllVisites() {
 
     this.serviceVisite.getVisite().subscribe(
       data => {
@@ -126,10 +160,11 @@ export class ClientFileComponent implements OnInit {
     )
   }
 
+  //remplir les informations de client dans les champs
   onEditFile(row: any) {
     console.log(row);
     this.visite.id = row.id;
-    
+
     this.formValue.patchValue({
       nomPrenom: row.nomPrenom,
       dateNaissance: row.dateNaissance,
@@ -144,6 +179,7 @@ export class ClientFileComponent implements OnInit {
     })
   }
 
+  //button modifier client
   UpdateClientFileDetails() {
 
     this.client.nomPrenom = this.formValue.value.nomPrenom;

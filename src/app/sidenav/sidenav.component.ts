@@ -13,5 +13,16 @@ export class SidenavComponent implements OnInit {
   ngOnInit(): void {
     
   }
-
+  getEtat()
+  {
+    let x =localStorage.getItem("logged");
+    if(x!= null)
+    {
+      return true;
+    }else
+    {
+      return false;
+    }
+    
+  }
 }

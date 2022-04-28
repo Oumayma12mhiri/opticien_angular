@@ -9,9 +9,9 @@
             <tr>
                 <td style="padding-left:0%;">
                     <mat-form-field appearance="fill" style="width: 200px;font-size: 80%;">
-                        <mat-label>Reference visite  :</mat-label>
-                        <input matInput placeholder="..." type="text" formControlName="refVisite"
-                            class="form-control" required id="refVisite">
+                        <mat-label>Reference client  :</mat-label>
+                        <input matInput placeholder="{{idClient}}" type="text" formControlName="refVisite"
+                            class="form-control" required id="refVisite" > {{idClient}}
                         <mat-icon matSuffix>tour</mat-icon>
                     </mat-form-field>
                 </td>
@@ -23,8 +23,8 @@
                 <td style="padding-left:0%;">
                     <mat-form-field appearance="fill" style="width: 200px;font-size: 80%;">
                         <mat-label>Date visite :</mat-label>
-                        <input matInput placeholder="..." type="date" formControlName="date"
-                            class="form-control" required id="date">
+                        <input matInput placeholder="" type="text" formControlName="date"
+                            class="form-control" required id="date"> {{date}} 
                         <mat-icon matSuffix>event</mat-icon>
                     </mat-form-field>
                 </td>
@@ -37,8 +37,8 @@
                 <td style="padding-left:0%;">
                     <mat-form-field appearance="fill" style="width: 200px;font-size: 80%;">
                         <mat-label>Heure visite :</mat-label>
-                        <input matInput placeholder="..." type="datetime" formControlName="heure" class="form-control"
-                            required id="heure">
+                        <input matInput placeholder="" type="text" formControlName="heure" class="form-control"
+                            required id="heure">{{hours}}
                         <mat-icon matSuffix>hourglass_bottom</mat-icon>
 
                     </mat-form-field>
@@ -51,8 +51,8 @@
                 <td style="padding-left:0%;">
                     <mat-form-field appearance="fill" style="width: 200px;font-size: 80%;">
                         <mat-label>Montant reçu :</mat-label>
-                        <input matInput placeholder="..." type="number" formControlName="" class="form-control"
-                            required id="">
+                        <input matInput placeholder="..." type="number" formControlName="montantReçuParVisite" class="form-control"
+                            required id="montantReçuParVisite">
                         <mat-icon matSuffix>paid</mat-icon>
                     </mat-form-field>
                 </td>
@@ -82,7 +82,7 @@
 </div>
 
 <div mat-dialog-actions>
-    <button mat-raised-button color="warn" class="fermer" id="cancel" (click)="onNoClick()"  >Fermer <mat-icon>clear </mat-icon></button>
+    <button mat-raised-button color="warn" class="fermer" id="cancel2" (click)="onNoClick()"  >Fermer <mat-icon>clear </mat-icon></button>
   
     <button mat-raised-button color="primary"  class="ajouter"  (click)="postVisitDetails()"  cdkFocusInitial
       >Ajouter visite <mat-icon>add_business </mat-icon></button>

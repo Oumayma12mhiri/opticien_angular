@@ -173,7 +173,7 @@
           <mat-form-field appearance="fill" style="width: 170px;font-size: 80%;">
             <mat-label>Organisme :</mat-label>
             <select matNativeControl required formControlName="organisme" class="form-control" id="organisme">
-              <option>{{serviceOrg.getNomOrganisme()}}</option>
+              <option *ngFor='let org of listOrg'>{{org.nomOrganisme}}</option>
             </select>
             <mat-icon matSuffix>engineering</mat-icon>
             <mat-hint>Hint</mat-hint>

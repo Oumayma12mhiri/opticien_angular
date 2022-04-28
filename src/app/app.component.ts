@@ -17,4 +17,16 @@ export class AppComponent {
     } else if (this.auth.getEtat() == 'true')
       this.sideBarOpen = true;
   }
+  getEtat()
+  {
+    let x =localStorage.getItem("logged");
+    if(x!= null)
+    {
+      return true;
+    }else
+    {
+      return false;
+    }
+    
+  }
 }
